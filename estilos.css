@@ -1,0 +1,98 @@
+ body{
+  color: #333;
+  font-family:sans-serif;
+  background: #fffff;
+  background-image: url('images/medicos.jpg');
+}
+
+
+
+media only screen and (min-width:200px) {
+  body {
+    background-color: #26ca;
+  }
+}
+
+.encabezado {
+  background-color: #48e;
+}
+
+
+
+input {
+  display: block;
+  margin:  12px auto;
+  padding: 9px;
+  box-sizing: border-box;
+  border: none;
+  background: #444;
+  border-top: 2px solid #48e;
+  background: transparent;
+  outline: none !important;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+
+input::placeholder {
+  color:#fff;
+  transition:color 0.3s;
+}
+
+input:hover {
+  background: #26a;
+}
+
+input:hover::placeholder{
+  color: #fff;
+}
+
+input:focus{
+  color:#fff;
+}
+
+input[type="submit"]{
+ width: 40%;
+ padding: 12px;
+ background: #26a;
+ color: #fff;
+ margin-top: 18px;
+}
+
+input[type="submit"]:hover{
+  background: #26ca;
+
+
+}
+form {
+  width: 40%;
+  margin: auto;
+  background:#26a;
+  padding: 20px;
+  padding-top: 1px;
+  margin-top: 5px;
+}
+
+h2 {
+  color:#fff;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.green {
+  color: greenyellow;
+}
+
+.red {
+    color:red;
+}
+
+label {
+  color:#48e;
+}
+label:hover{
+   color: #fff;
+}
+.formulario {
+  margin-left: 30px;
+}

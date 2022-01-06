@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historias Clinicas</title>
+
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+
+<body style="background-color:"black"">
+    <div class="encabezado">
+        <h2>Aplicacion historias Clinicas</h2>
+    </div>
+    <form autocomplete="off">
+        <input type="text" name="nombre usuario" placeholder="nombre usuario" class="usarios" required>
+        <input type="text" name="telefono" placeholder="telefono" required>
+        <input type="text" name="direccion" placeholder="direccion" required>
+        <label for="" style="padding: 20px;">Fecha de atencion </label>
+        <input type="date" id="start" name="start" value="2021-01-01" min="1800-01-01" max="3000-12-31" required>
+        <label for="">Cargar archivo pdf </label>
+        <input type="file" accept="application/pdf" id="file" required>
+    </form>
+    <div class="btn-group" style="margin-left:500px;">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <button type="button" class="btn btn-primary">Nuevo</button>
+        <button type="button" class="btn btn-primary">Actualizar</button>
+        <button type="button" class="btn btn-primary">Eliminar</button>
+        <button type="button" class="btn btn-primary">Buscar</button>
+        </div>
+    </div>
+    <script  src="onlyPdf.js" type="text/javascript"></script>
+      <link rel="stylesheet" href="estilos.css"><!--al ponerlo aqui toma los estilos propios y no solo los de boostrap-->
+
+</body>
+
+</html>
