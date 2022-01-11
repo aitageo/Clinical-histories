@@ -13,24 +13,27 @@
 </head>
 
 <body style="background-color:"black"">
+  <div class="modal-tittle">
+  </div>
     <div class="encabezado">
         <h2>Aplicacion historias Clinicas</h2>
     </div>
-    <form autocomplete="off">
+    <form autocomplete="on" method="post" action="insertar.php">
         <input type="text" name="nombre" placeholder="nombre usuario" class="usarios" required>
         <input type="text" name="telefono" placeholder="telefono" required>
         <input type="text" name="direccion" placeholder="direccion" required>
         <label for="" style="padding: 20px;">Fecha de atencion </label>
         <input type="date" id="start" name="start" value="2021-01-01" min="1800-01-01" max="3000-12-31" required>
         <label for="">Cargar archivo pdf </label>
-        <input type="file" accept="application/pdf" id="file" required>
-    </form>
-    <div class="btn-group" style="margin-left:500px;">
+        <input type="file" name="pdf" accept="application/pdf" id="file" required>
+
+    <div class="btn-group">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <button type="button" class="btn btn-primary" name="nuevo">Nuevo</button>
         <button type="button" class="btn btn-primary" name="actualizar">Actualizar</button>
         <button type="button" class="btn btn-primary" name="eliminar">Eliminar</button>
         <button type="button" class="btn btn-primary" name="buscar">Buscar</button>
+      </form>
         </div>
     </div>
     <script  src="onlyPdf.js" type="text/javascript"></script>
