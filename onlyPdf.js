@@ -21,3 +21,6 @@ $('input[type="file"]').on('change', function(){
       }
     }
   });
+$("#enviar").click(function(){
+   alert("Datos guardados");
+});
