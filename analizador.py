@@ -3,6 +3,7 @@
 import fitz
 import re
 import os
+import subprocess
 import colorama
 from colorama import *
 init()

@@ -10,7 +10,6 @@ include_once 'db.php';
   $filas= mysqli_num_rows($result);
   if($filas) {
     header("location:usuarios.html");
-      echo '<script text="text/javascript">console.log("Ingreso Exitoso")</script>';
     ?>
     <?php
   } else {
