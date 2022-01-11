@@ -2,15 +2,17 @@
 
 include("db.php");
 if(isset($_POST['nuevo'])){
-$nombre = if(isset($_POST['nombre']));
-$telefono = if(isset($_POST['telefono']));
-$direccion = if(isset($_POST['direccion']));
-$fecha = if(isset($_POST['start']));
-$pdf = if(isset($_FILES['pdf']));
+$nombre = $_POST['nombre'];
+$telefono = $_POST['telefono'];
+$direccion = $_POST['direccion'];
+$fecha = $_POST['start'];
+echo "<h1>$fecha</h1>";
+$pdf = $_POST['pdf'];
+echo "<h1>$pdf</h1>";
 
-$query = "INSERT INTO usuarios(nombre,telefono,direccion,fecha_atencion,pdf) values('$nombre,$telefono,$direccion,$fecha,$pdf')"
+$query = "INSERT INTO usuarios values('$nombre','$telefono','$direccion','$fecha','$pdf')";
 $result = mysqli_query($conexion,$query);
 header('location:usuarios.html');
-
+mysqli_close($conexion);
 }
  ?>
