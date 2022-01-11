@@ -1,6 +1,4 @@
 
-
-let nombre = document.querySelector(".nombre");
 let correo = document.querySelector(".correo");
 let contraseña = document.getElementById("contraseña");
 
@@ -15,10 +13,6 @@ enviar.addEventListener("click",function(e){
         alert('el campo contraseña es obligatorio')
         e.preventDefault();
         return false;
-    }else {
-        alert("ingreso exitoso");
-         window.location.href='usuarios.html';
     }
-
 
 });
