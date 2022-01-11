@@ -27,6 +27,10 @@
     <!--<input type="submit" name="entrar" value="entrar" >-->
     <script src="index.js" type="text/javascript"></script>
 
+
+
+
+<!-- para modificar -->
       <?php
       include_once 'db.php';
 
