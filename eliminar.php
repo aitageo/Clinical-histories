@@ -8,17 +8,15 @@ $nombre = $_POST['nombre'];
 $query = "DELETE FROM usuarios WHERE nombre='$nombre'";
 $result = mysqli_query($conexion,$query);
 
+header('location:usuarios.html');
+mysqli_close($conexion);
 
 if($result){
-  echo "Borrado exitoso";
+  echo '<script> alert("Borrado exitoso");</script>';
 }else {
-  echo "No se pudo borrar";
+    echo '<script> alert("No se pudo borrar");</script>';
 }
 
-
-
-
 };
-
 
  ?>

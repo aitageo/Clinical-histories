@@ -11,7 +11,7 @@ $pdf = $_POST['pdf'];
 
 $query = "INSERT INTO usuarios values('$nombre','$telefono','$direccion','$fecha','$pdf')";
 $result = mysqli_query($conexion,$query);
-//header('location:usuarios.html');
+header('location:usuarios.html');
 mysqli_close($conexion);
 }
  ?>
