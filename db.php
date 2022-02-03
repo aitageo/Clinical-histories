@@ -5,7 +5,16 @@
   $localhost="localhost";
 
 
-	$conexion=mysqli_connect($localhost,$user,$password,$database);
+	try {
+
+	$conexion=new PDO('mysql:host=localhost; dbname=historias_clinicas','root','');
+
+}catch(Exception $e){
+	die("error" . $e->getMessage());
+	echo "linea del error" .$e->getLine();
+}
+
+
 
 
 ?>

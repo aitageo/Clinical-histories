@@ -21,3 +21,8 @@ $('input[type="file"]').on('change', function(){
       }
     }
   });
+
+$("#nuevo").submit((event)=>{
+ event.preventDefault();
+ alert("Datos Guardados Exitosamente");
+});

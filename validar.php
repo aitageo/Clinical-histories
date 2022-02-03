@@ -6,10 +6,12 @@ include_once 'db.php';
   session_start();
 
   $query= "SELECT *FROM medicos where email='$email' and password='$password'";
-  $result= mysqli_query($conexion,$query);
-  $filas= mysqli_num_rows($result);
+  $result=$conexion->prepare($query);
+  $result->execute();
+  $filas=$result->rowCount();
   if($filas) {
     header("location:usuarios.html");
+    echo '<script text="text/javascript">alert("Ingreso Exitoso")</script>';
     ?>
     <?php
   } else {

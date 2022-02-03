@@ -1,5 +1,6 @@
 <?php
 
+echo "<script  src='onlyPdf.js' type='text/javascript'></script>";
 include("db.php");
 if(isset($_POST['nuevo'])){
 $nombre = $_POST['nombre'];
@@ -10,7 +11,9 @@ $pdf = $_POST['pdf'];
 
 
 $query = "INSERT INTO usuarios values('$nombre','$telefono','$direccion','$fecha','$pdf')";
-$result = mysqli_query($conexion,$query);
+$result = $conexion->prepare($query);
+$result->execute();
+echo "Datos guardados";
 header('location:usuarios.html');
 mysqli_close($conexion);
 }

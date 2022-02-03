@@ -12,6 +12,7 @@ init()
 end_color = Fore.LIGHTWHITE_EX
 
 pdf = os.path("http://localhost:8282/javascript_1/usuarios.html")
+print(pdf)
 document = fitz.open(pdf)
 
 page = document.loadPage(0)

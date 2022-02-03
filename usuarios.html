@@ -13,12 +13,14 @@
 </head>
 
 <body style="background-color:"black"">
-  <div class="modal-tittle"><!--por completar-->
+  <div id="modal-tittle"><!--por completar-->
+  </div>
+  <div id="modal-msg">
   </div>
     <div class="encabezado">
         <h2>Aplicacion historias Clinicas</h2>
     </div>
-    <form autocomplete="on" method="POST">
+    <form autocomplete="on" method="POST" id="form">
         <input type="text" name="nombre" placeholder="nombre usuario" class="usarios" required>
         <input type="text" name="telefono" placeholder="telefono" required>
         <input type="text" name="direccion" placeholder="direccion" required>
@@ -33,8 +35,9 @@
         <button type="submit" class="btn btn-primary" name="actualizar" formaction="actualizar.php">Actualizar</button>
         <button type="submit" class="btn btn-danger" name="eliminar" formaction="eliminar.php">Eliminar</button>
         <button type="submit" class="btn btn-primary" name="buscar" formaction="buscar.php">Buscar</button>
-      </form>
+
         </div>
+      </form>
     </div>
     <script  src="onlyPdf.js" type="text/javascript"></script>
       <link rel="stylesheet" href="estilos.css"><!--al ponerlo aqui toma los estilos propios y no solo los de boostrap-->

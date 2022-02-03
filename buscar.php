@@ -30,7 +30,7 @@ while ($fila = mysqli_fetch_array($result)) {
   echo "<h2>Historias Clinicas</h2>";
   echo "<h3>Resultados de la busqueda</h3>";
     echo "</div>";
-  echo "<form action='buscar.php' method='post'>";
+  echo "<form action='actualizar.php' method='post'>";
   echo "<input type='text' style='font-size:20px ;color:white'; name='nombre' value='" . $fila['nombre'] ."'><br>";
   echo "<input type='text' style='font-size:20px ;color:white'; name='telefono' value='" . $fila['telefono'] ."'><br>";
   echo "<input type='text' style='font-size:20px ;color:white'; name='direccion' value='" . $fila['direccion'] ."'><br>";
@@ -40,6 +40,13 @@ while ($fila = mysqli_fetch_array($result)) {
 
 
 }
+if ($fila != "") {
+  echo "Busqueda exitosa";
+} else {
+  echo "No se encontro nada";
+  header("location:usuarios.html");
+}
+
 
 };
 mysqli_close($conexion);
