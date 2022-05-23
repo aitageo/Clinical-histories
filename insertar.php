@@ -14,7 +14,7 @@ $query = "INSERT INTO usuarios values('$nombre','$telefono','$direccion','$fecha
 $result = $conexion->prepare($query);
 $result->execute();
 echo "Datos guardados";
-header('location:usuarios.html');
+header('location:usuarios.php');
 mysqli_close($conexion);
 }
  ?>

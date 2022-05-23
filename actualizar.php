@@ -12,7 +12,8 @@ echo "$pdf";
 
 
 $sql = "UPDATE usuarios SET nombre='$nombre',telefono='$telefono',direccion='$direccion',fecha='$fecha',pdf='$pdf'";
-$result = mysqli_query($conexion,$sql);
+$result = $conexion->prepare($sql);
+$result->execute();
 if ($result) {
   echo "Datos Actualizados";
 } else {

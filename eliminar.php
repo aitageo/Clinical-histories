@@ -6,9 +6,10 @@ $nombre = $_POST['nombre'];
 
 
 $query = "DELETE FROM usuarios WHERE nombre='$nombre'";
-$result = mysqli_query($conexion,$query);
+$result = $conexion->prepare($query);
+$result->execute();
 
-header('location:usuarios.html');
+header('location:usuarios.php');
 mysqli_close($conexion);
 
 if($result){

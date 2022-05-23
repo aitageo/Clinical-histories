@@ -11,8 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
-
-<body style="background-color:"black"">
+<body>
   <div id="modal-tittle"><!--por completar-->
   </div>
   <div id="modal-msg">
@@ -29,7 +28,8 @@
         <label for="">Cargar archivo pdf </label>
         <input type="file" name="pdf" accept="application/pdf" id="file" required>
 
-    <div class="btn-group">
+
+ <div class="btn-group">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <button type="submit" class="btn btn-primary" name="nuevo" formaction="insertar.php" id="nuevo">Nuevo</button>
         <button type="submit" class="btn btn-primary" name="actualizar" formaction="actualizar.php">Actualizar</button>

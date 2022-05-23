@@ -1,58 +1,42 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Historias Clinicas</title>
+
+    <link rel='stylesheet' href='estilos.css'>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+  </head>
+<body>
+
 <?php
-//por aitageo
-
-echo "<!DOCTYPE html>";
-echo "<html lang='en'>";
-
-echo "<head>";
-    echo "<meta charset='UTF-8'>";
-    echo "<meta http-equiv='X-UA-Compatible' content='IE=edge'>";
-    echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>";
-    echo "<title>Historias Clinicas</title>";
-
-    echo "<link rel='stylesheet' href='estilos.css'>";
-    echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>";
-    echo "<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>";
-    echo "</head>";
-
-    echo "<body style='background-color:'black';'>";
-
-
 include("db.php");
 if(isset($_POST['buscar'])){
 $nombre = $_POST['nombre'];
 
+$registro = $conexion->query("SELECT * FROM usuarios WHERE nombre='$nombre'")->fetchAll(PDO::FETCH_OBJ); ?>
 
-$query = "SELECT * FROM usuarios WHERE nombre='$nombre'";
-$result = mysqli_query($conexion,$query);
-while ($fila = mysqli_fetch_array($result)) {
-  echo "<div class='encabezado'>";
-  echo "<h2>Historias Clinicas</h2>";
-  echo "<h3>Resultados de la busqueda</h3>";
-    echo "</div>";
-  echo "<form action='actualizar.php' method='post'>";
-  echo "<input type='text' style='font-size:20px ;color:white'; name='nombre' value='" . $fila['nombre'] ."'><br>";
-  echo "<input type='text' style='font-size:20px ;color:white'; name='telefono' value='" . $fila['telefono'] ."'><br>";
-  echo "<input type='text' style='font-size:20px ;color:white'; name='direccion' value='" . $fila['direccion'] ."'><br>";
-  echo "<input type='text' style='font-size:20px ;color:white'; name='fecha' value='" . $fila['fecha'] ."'><br>";
-  echo "<input type='text' style='font-size:20px ;color:white'; name='pdf' value='" . $fila['pdf'] ."'><br>";
-  echo "</form>";
+<?php foreach ($registro as $key): ?>
 
+<div class='encabezado'>
+  <h2>Historias Clinicas</h2>
+  <h3>Resultados de la busqueda</h3>
+  </div>
+  <form action='actualizar.php' method='post'>
+  <input type='text'  name='nombre' value='<?php echo  $key->nombre?>'><br>
+  <input type='text'  name='telefono' value='<?php echo  $key->telefono?>'><br>
+  <input type='text'  name='direccion'value='<?php echo  $key->direccion?>'><br>
+  <input type='text' name='fecha' value='<?php echo  $key->fecha?>'><br>
+  <input type='text' name='pdf' value='<?php echo  $key->pdf?>'><br>
+  </form>
 
-}
-if ($fila != "") {
-  echo "Busqueda exitosa";
-} else {
-  echo "No se encontro nada";
-  header("location:usuarios.html");
-}
+<?php endforeach; ?>
 
-
+<?php
 };
-mysqli_close($conexion);
-
-echo "</body>";
-echo "</html>";
-
-
 ?>
+</body>
+</html>

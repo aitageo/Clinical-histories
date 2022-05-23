@@ -10,22 +10,21 @@ include_once 'db.php';
   $result->execute();
   $filas=$result->rowCount();
   if($filas) {
-    header("location:usuarios.html");
-    echo '<script text="text/javascript">alert("Ingreso Exitoso")</script>';
+    header("location:usuarios.php");
     ?>
     <?php
   } else {
     ?>
     <?php
     include("index.php");
-    echo '<script text="text/javascript">alert("error de validacion")</script>';
     ?>
+    <script type="text/javascript">
 
+    </script>
     <?php
   }
-
-  mysqli_free_result($result);
-  mysqli_close($conexion);
-
-
 ?>
+<script type="text/javascript">
+alert("ingreso exitoso");
+
+</script>
