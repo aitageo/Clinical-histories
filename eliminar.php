@@ -1,6 +1,7 @@
 <?php
 include("db.php");
 ///
+require("db.php");
 
 if(isset($_POST['eliminar'])){
 $nombre = $_POST['nombre'];
